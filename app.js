@@ -70,7 +70,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRETS,
-    callbackURL: "https://secret-sharing.onrender.com/auth/google/secrets",
+    callbackURL: process.env.CALLBACK_URL,
     // userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
